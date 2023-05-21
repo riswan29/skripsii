@@ -1,63 +1,20 @@
-{% load static %}
-
-
-{% block content %}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="{% static 'css/login.css'%}" />
-    <title>Sign in & Sign up Form</title>
-    <style>
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+<html>
+<head>
+    <title>Halaman Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="POST">
+        {% csrf_token %}
 
-      .forms-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
 
-      .signin-signup {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-      }
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
 
-      .button {
-        padding: 30px 40px;
-        background-color: #4481eb;
-        color: white;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        margin: 10px;
-        border-radius: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-            <a href="{% url 'login_dosen' %}"><button class="button">Dosen</button></a>
-            <a href="{% url 'login_mahasiswa' %}"><button class="button">Mahasiswa</button></a>
-        </div>
-      </div>
-    </div>
-
-    <script src="{% static 'js/login.js'%}"></script>
-  </body>
+        <input type="submit" value="Login">
+    </form>
+</body>
 </html>
-
-{% endblock content %}

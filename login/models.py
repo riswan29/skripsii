@@ -1,15 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
-
-class Registrasi(models.Model):
-    ROLE_CHOICES = (
-        ('dosen','Dosen'),
-        ('admin', 'Admin'),
-        ('mahasiswa', 'Mahasiswa'),
-    )
-
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    nim = models.CharField(max_length=10, unique=True)
-    password = models.CharField(max_length=100)
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES)
+class Pengguna(models.Model):
     username = models.CharField(max_length=100)
+    nim = models.CharField(max_length=20)
+    password = models.CharField(max_length=100)
+    role = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.username
+    class Meta:
+        db_table = 'pengguna'

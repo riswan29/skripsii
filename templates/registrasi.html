@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registrasi</title>
+    <title>Halaman Registrasi</title>
 </head>
 <body>
-    <h2>Registrasi</h2>
-    <form method="post">
+    <h2>Registrasi Akun</h2>
+    <form method="POST" action="{% url 'registrasi' %}">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Registrasi">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="nim">NIM:</label>
+        <input type="text" id="nim" name="nim" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirm_password">Konfirmasi Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="dosen">Dosen</option>
+            <option value="mahasiswa">Mahasiswa</option>
+        </select><br><br>
+
+        <input type="submit" value="Daftar">
     </form>
 </body>
 </html>

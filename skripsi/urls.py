@@ -8,12 +8,12 @@ from dosen.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', DISKUSI, name='diskusi'),
-    # path('login', login, name='login'),
-    # path('dosen', l_dosen, name='login_dosen'),
-    # path('mahasiswa', l_mahasiswa, name='login_mahasiswa'),
-    path('mahasiswa/dashboard', dashboardMHS, name='dashboardMHS'),
-    path('dosen/dashboard', dashboardDSN, name='dashboardDSN'),
+    path('login', user_login, name='login'),
+    # path('dosen/dashboard/', dosen_dashboard, name='dosen_dashboard'),
+    # path('mahasiswa/dashboard/', mahasiswa_dashboard, name='mahasiswa_dashboard'),
+    # ...
+    path('mahasiswa/dashboard/', dashboardMHS, name='dashboardMHS'),
+    path('dosen/dashboard/', dashboardDSN, name='dashboardDSN'),
     path('admin/', admin.site.urls),
     path('registrasi/', registrasi, name='registrasi'),
-    path('success/', success, name='success'),
 ]

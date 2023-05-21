@@ -1,1 +1,14 @@
-halaman mahasiswa
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Mahasiswa</title>
+</head>
+<body>
+    <h2>Daftar Mahasiswa</h2>
+    <ul>
+        {% for mahasiswa in mahasiswa_list %}
+        <li>{{ mahasiswa.username }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
