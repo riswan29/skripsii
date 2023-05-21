@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'app',
     'dosen',
     'mahasiswa',
+    'login',
 ]
 
 MIDDLEWARE = [
