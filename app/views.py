@@ -32,6 +32,9 @@ def DISKUSI(request):
         # Menambahkan pencarian ke dalam daftar history pencarian
         search_history.append(prompt)
 
+        # Simpan ke file Excel
+        save_to_excel(prompt, message)
+
         context = {"messages": session_messages, "searches": search_history}
         return render(request, "index.html", context)
     else:
