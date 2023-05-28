@@ -1,0 +1,3 @@
+username = frans
+password = root
+email = simboloni288@gmail.com 
