@@ -10,4 +10,6 @@ urlpatterns = [
     path('', DISKUSI, name='diskusi'),
     path('registration/', registration_view, name='registration'),
     path('success/', success_view, name='success'),
+    path('new-chat/', newChat, name='newChat'),
+    path('chat/<str:search>/', loadChat, name='loadChat'),
 ]

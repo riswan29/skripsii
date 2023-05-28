@@ -32,10 +32,6 @@
             messages.scrollTop = messages.scrollHeight;
         }
         window.onload = scrollToBottom;
-
-        function newChat() {
-            window.location.href = "{% url 'newChat' %}";
-        }
     </script>
 </head>
 <body>
@@ -43,10 +39,9 @@
         <h2>History Pencarian</h2>
         <ul id="history">
             {% for search in searches %}
-                <li><a href="{% url 'loadChat' search %}">{{ search }}</a></li>
+                <li>{{ search }}</li>
             {% endfor %}
         </ul>
-        <button onclick="newChat()">New Chat</button>
     </div>
     <div id="content">
         <h1>Halaman Chat GPT</h1>
@@ -61,6 +56,9 @@
                     <li><strong>User:</strong> {{ message.content }}</li>
                 {% elif message.sender == 'bot' %}
                     <li><strong>Bot:</strong> {{ message.content }}</li>
+                    <br>
+                    <hr>
+                    <hr>
                 {% endif %}
             {% endfor %}
         </ul>
